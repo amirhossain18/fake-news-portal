@@ -1,10 +1,12 @@
+                     // news catagory Load
+
 const loadNewsCatagory= ()=>{
     fetch('https://openapi.programming-hero.com/api/news/categories')
     .then(res=>res.json())
     .then(data=> displayCategory(data.data.news_category))
 }
 
-
+                       // display 8 catagorys
 
 const displayCategory= (categories)=>{
 for(const category of categories){
@@ -21,14 +23,11 @@ catagoryContainer.appendChild(newCatagoryDIv)
 
 }
 
-
+    // catagory wais news Load
 const catagoryNewsPage= (idCode)=>{
   const catagoryContainer= document.getElementById('catagory')
-  
     toggleSpiner(true);
-   const url= `https://openapi.programming-hero.com/api/news/category/0${idCode}`
-    
-
+    const url= `https://openapi.programming-hero.com/api/news/category/0${idCode}`
     fetch(url)
     .then(res=>res.json())
     .then(categories=> categorynewsList(categories.data))
@@ -37,23 +36,23 @@ const catagoryNewsPage= (idCode)=>{
 const newsContainer= document.getElementById('newscontainer')
 newsContainer.innerText='';
 const categorynewsList= (categories)=>{
- 
+//  no news found
     if(categories.length== 0){
       newsContainer.innerHTML="";
       const newsAmount= document.getElementById('newsAmount')
       newsAmount.classList.add('notfound')
         newsAmount.innerText='';
         newsAmount.innerText= ` not news found
-        `
+         `
         toggleSpiner(false);
     }
     else{
       newsContainer.innerHTML="";
    
- for(category of categories){
-console.log(categories)
-  const newsAmount= document.getElementById('newsAmount')
-  newsAmount.classList.remove('notfound')
+         for(category of categories){
+
+         const newsAmount= document.getElementById('newsAmount')
+         newsAmount.classList.remove('notfound')
         newsAmount.innerText='';
         newsAmount.innerText= `  Total news ${categories.length} 
         `
@@ -94,6 +93,10 @@ console.log(categories)
     }
 }
 
+
+          // spiner / loader
+
+
 const toggleSpiner= isLoading=>{
     const lodarSection= document.getElementById('lodar')
     if(isLoading){
@@ -108,7 +111,7 @@ const toggleSpiner= isLoading=>{
 
 
 
-
+// news boady show 
 
 function openNav(newsID) {
     document.getElementById("mySidenav").style.width = "100%";
@@ -126,7 +129,13 @@ function openNav(newsID) {
    <h1> ${Newsdata.title}</h1>
    <img src=${Newsdata.image_url} class="card-img-top w-50" alt="...">
    <h6>${Newsdata.details}</h6>
-    
+
+  
+   <img style="height: 100px;" class="rounded-circle" src=${category.author.img} alt=""> 
+
+   <h4>${Newsdata.author.name ? category.author.name : '<span  fw-bold">Not Found</span>'}</h4>
+ 
+
     `
   }
 
