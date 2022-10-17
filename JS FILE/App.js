@@ -8,17 +8,11 @@ const loadNewsCatagory= ()=>{
 
 const displayCategory= (categories)=>{
 for(const category of categories){
-    // console.log(category.category_name)
     const Did=(`${category.category_id}`)
-
-
 const catagoryContainer= document.getElementById('catagory')
     const newCatagoryDIv= document.createElement('div')
-    newCatagoryDIv.classList.add('topnav')
-    
-    
+    newCatagoryDIv.classList.add('topnav') 
     newCatagoryDIv.innerHTML=`
-
  <a onclick="catagoryNewsPage(${category.category_id})"  >${category.category_name }</a>
 `
 catagoryContainer.appendChild(newCatagoryDIv)
@@ -43,18 +37,27 @@ const catagoryNewsPage= (idCode)=>{
 const newsContainer= document.getElementById('newscontainer')
 newsContainer.innerText='';
 const categorynewsList= (categories)=>{
-    console.log(categories.length)
-    newsContainer.innerHTML="";
- for(category of categories){
-    console.log(category.rating)
-  const newsAmount= document.getElementById('newsAmount')
-        newsAmount.innerText='';
-        newsAmount.innerText= `   Total News ${categories.length} 
-        `
  
+    if(categories.length== 0){
+      newsContainer.innerHTML="";
+      const newsAmount= document.getElementById('newsAmount')
+      newsAmount.classList.add('notfound')
+        newsAmount.innerText='';
+        newsAmount.innerText= ` not news found
+        `
+        toggleSpiner(false);
+    }
+    else{
+      newsContainer.innerHTML="";
+   
+ for(category of categories){
+console.log(categories)
+  const newsAmount= document.getElementById('newsAmount')
+  newsAmount.classList.remove('notfound')
+        newsAmount.innerText='';
+        newsAmount.innerText= `  Total news ${categories.length} 
+        `
     const newNewsDiv = document.createElement('div')
-    
-
     newNewsDiv.innerHTML=`
     <div class="card m-2" style="width: 22rem;">
     <img src=${category.image_url} class="card-img-top" alt="...">
@@ -64,10 +67,7 @@ const categorynewsList= (categories)=>{
     </div>
     <div class="card-body">
    
-
-
     <i class="fa-sharp fa-solid fa-eye ml-2"></i> ${category.total_view ? category.total_view : '<span  fw-bold">No Viewer</span>'}
-    
     
  
   <i class="fa-solid fa-star m-1"></i>
@@ -91,6 +91,7 @@ const categorynewsList= (categories)=>{
     newsContainer.appendChild(newNewsDiv)
  }
  toggleSpiner(false);
+    }
 }
 
 const toggleSpiner= isLoading=>{
@@ -104,10 +105,10 @@ const toggleSpiner= isLoading=>{
     }
 }
 
-catagoryNewsPage(01)
 
 
-loadNewsCatagory()
+
+
 
 function openNav(newsID) {
     document.getElementById("mySidenav").style.width = "100%";
@@ -135,3 +136,10 @@ function openNav(newsID) {
   function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
   }
+
+
+
+//               auto call 
+
+  catagoryNewsPage(01)
+  loadNewsCatagory()

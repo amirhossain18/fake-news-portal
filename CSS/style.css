@@ -117,6 +117,12 @@
     border-radius: 50%;
   }
 
+  .notfound{
+    margin-top:20px;
+    height:300px;
+  
+  }
+
   
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
