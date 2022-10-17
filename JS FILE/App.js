@@ -29,6 +29,8 @@ catagoryContainer.appendChild(newCatagoryDIv)
 
 
 const catagoryNewsPage= (idCode)=>{
+  const catagoryContainer= document.getElementById('catagory')
+  
     toggleSpiner(true);
    const url= `https://openapi.programming-hero.com/api/news/category/0${idCode}`
     

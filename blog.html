@@ -42,8 +42,109 @@
           </div>
         </nav>
       </header>
+    
+      <section>
+        <div class="container mt-5  border border-primary rounded">
+           <h2>What's the differences between var, let and const</h2>
+          <ul>
+              <li> 
+                   <p>var is function-scoped while let and const are block-scoped.</p>
+             </li>
+              <li> 
+                    <p>var variables can be reassigned while let and const variables can not.</p>
+              </li>
+              <li> 
+                    <p>var variables are declared using the var keyword while let and const variables are declared using the let and const keywords respectively.</p>
+               </li>
+                <li> 
+                    <p>const variables are immutable while let and var variables are not.
+
+                     </p>
+               </li>
+           </ul>
+
+      <div class="d-flex d-flex justify-content-end">
+              <a href="mailto:"><i class="fa-solid fa-user"></i> Amir</a>
+
+                 <p class="px-3"><i class="fa-sharp fa-solid fa-calendar-days"></i> 02 jun 22</p>
+    </div>
+
+       </div>
+
+         <!-- question 2 -->
+
+         <div class="container mt-5  border border-primary rounded">
+       <h2>What's the Difference Between Arrow Function and Regular Function?</h2>
+              <ul>
+                   <li> 
+                        <p>A programmer can get the same result as regular functions by writing a few lines of code using arrow functions.Curly brackets are not required if only one expression is present.</p>
+                  </li>
+                  <li> 
+                        <p>arguments object inside the regular functions contains the list of arguments. The arrow function, on the opposite, doesn’t define arguments i.e. they do not have arguments binding.But you can easily access the arrow function arguments using a rest parameter ...args.</p>
+                   </li>
+                    <li> 
+                              <p>Inside of a regular JavaScript function, this value is dynamic. The dynamic context means that the value of this depends on how the function is invoked.The behavior of this inside of an arrow, function differs considerably from the regular function’s this behavior as an arrow function does not have its own “this” keyword.</p>
+                     </li>
+                     <li> 
+                           <p>Regular functions are constructible and callable. They can be called using the new keyword.But, the arrow functions are only callable and not constructible, i.e., arrow functions can never be used as constructor functions.
+  
+                             </p>
+                       </li>
+                              <p> <strong> Summary</strong> this value inside a regular function is dynamic and depends on how the function is invoked. But this inside the arrow function is bound lexically and equals to this of the outer function. Fat arrow methods always bind this a value to the class instance.</p>
+                       </ul>
+  
+            <div class="d-flex d-flex justify-content-end">
+                 <a href="mailto:"><i class="fa-solid fa-user"></i> Amir</a>
+  
+                             <p class="px-3"><i class="fa-sharp fa-solid fa-calendar-days"></i> 02 jun 22</p>
+                    </div>
+  
+                   </div>
+<!-- question 3 -->
+
+<div class="container mt-5  border border-primary rounded">
+  <h2>The 3 advantages of backtick literals (``) in JavaScript</h2>
+  <ul>
+    <li> 
+      <p><strong>
+        String concatenation (aka variable interpolation) 
+      </strong>
+        The big advantage of backtick literals over quotation marks is when it is necessary to insert variables into a string phrase.
+        
+        This is where the term template literal comes from — the string in backticks functions like a template with some variables interpolated into it:</p>
+    </li>
+    <li> 
+      <p>  <strong>
+        Cleaner code, less escaping with \
+      </strong>
+        The other advantage of backtick literals (` `) is not needing to escape double quote (“ ”) or single quote (‘ ’) characters using a backslash (\).
+        
+        For example, the following three strings are equivalent in JavaScript: Again, using backticks to create strings can improve code readability.</p>
+    </li>
+    <li> 
+      <p> <strong>
+        Multi-line code 
+      </strong>
+        What if we create a multi-line string in JavaScript? We get a SyntaxError:
+        The solution would be to add \n newline characters, but that would make the string almost impossible to read.
+
+        Backtick literals solve this problem and are preferable for HTML:The backticks signal the JavaScript parser to look for multi-line strings.</p>
+    </li>
+  
+  
+  <div class="d-flex d-flex justify-content-end">
+    <a href="mailto:"><i class="fa-solid fa-user "></i> Amir</a>
+  
+    <p class="px-3"><i class="fa-sharp fa-solid fa-calendar-days "></i> 02 jun 22</p>
+  </div>
+  
+     </div>
 
 
-    <p>Blog page</p>
+
+
+      </section>
+
+
 </body>
 </html>
