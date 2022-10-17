@@ -44,7 +44,7 @@ const categorynewsList= (categories)=>{
     console.log(categories.length)
     newsContainer.innerHTML="";
  for(category of categories){
-    // console.log(category._id)
+    console.log(category.rating)
   const newsAmount= document.getElementById('newsAmount')
         newsAmount.innerText='';
         newsAmount.innerText= `   Total News ${categories.length} 
@@ -59,12 +59,23 @@ const categorynewsList= (categories)=>{
     <div class="card-body">
       <h5 class="card-title">${category.title}</h5>
       <p class="card-text ">${category.details.slice(0,100)}  ...</p>
-      <button onclick="openNav('${category._id}')" type="button" class="btn btn-success">Read More</button>
     </div>
     <div class="card-body">
    
-    <i class="fa-sharp fa-solid fa-eye"></i> ${category.total_view ? category.total_view : '<span  fw-bold">No Viewer</span>'}
-   
+
+
+    <i class="fa-sharp fa-solid fa-eye ml-2"></i> ${category.total_view ? category.total_view : '<span  fw-bold">No Viewer</span>'}
+    
+    
+ 
+  <i class="fa-solid fa-star m-1"></i>
+  <i class="fa-solid fa-star m-1"></i>
+  <i class="fa-solid fa-star-half-stroke m-1"></i>
+  <i class="fa-regular fa-star m-1"></i>
+  <i class="fa-regular fa-star m-1"></i>   
+
+      <button onclick="openNav('${category._id}')" type="button" class="btn btn-success">Read More</button>
+
     </div>
     <ul class="list-group list-group-flush  d-flex align-items-center">
        <img class="w-25 rounded-circle mt-2" src=${category.author.img} alt=""> 
