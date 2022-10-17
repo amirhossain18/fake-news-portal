@@ -128,13 +128,17 @@ function openNav(newsID) {
     newsDetails.innerHTML=`
    <h1> ${Newsdata.title}</h1>
    <img src=${Newsdata.image_url} class="card-img-top w-50" alt="...">
-   <h6>${Newsdata.details}</h6>
+   
+   <p> <i class="fa-sharp fa-solid fa-eye ml-2"></i> ${Newsdata.total_view ? Newsdata.total_view : '<span  fw-bold">No Viewer</span>'}</p>  <i class="fa-solid fa-star m-1"></i>
+   <i class="fa-solid fa-star m-1"></i>
+   <i class="fa-solid fa-star-half-stroke m-1"></i>
+   <i class="fa-regular fa-star m-1"></i>
+   <i class="fa-regular fa-star m-1"></i>  
+   <h6 class="m-4">${Newsdata.details}</h6>
+   <img style="height: 100px;" class="rounded-circle" src=${Newsdata.author.img} alt=""> 
 
-  
-   <img style="height: 100px;" class="rounded-circle" src=${category.author.img} alt=""> 
-
-   <h4>${Newsdata.author.name ? category.author.name : '<span  fw-bold">Not Found</span>'}</h4>
- 
+   <h4>${Newsdata.author.name ? Newsdata.author.name : '<span  fw-bold">Not Found</span>'}</h4>
+   <h6 class="list-group-item">${Newsdata.author.published_date}</h6>
 
     `
   }
